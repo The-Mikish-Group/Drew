@@ -1,0 +1,310 @@
+﻿@{
+    // This Site
+    string siteURL = "http://drewsheafor.illustrate.net/";
+
+    // Set Site Name
+    string siteName = "Drew Sheafor and Friends";
+
+    // Short name appears in Nav Bar at top on Phones... Can be longer like "Avon Park Nazarene" or "Avon Park Naz"
+    string siteNameShort = "Drew Sheafor";
+
+    // Overall Organization
+    string siteOrganization = "The Mikish Group";
+
+    // Set default values
+    string pageTitle = ViewBag.Message + " - " + siteNameShort;
+    string description = "Drew Sheafor - St. Louis Live Music.";
+    string folder = "";
+
+    //Share Image and ShareImage folder
+    string shareImage = "Drew-ls.png";
+    string shareImageFolder = siteURL + "content/linkshares/";
+    string imageWidth = "1200";
+    string imageHeight = "630";
+
+    // 'Active Link' variables to keep track of the active link
+    string active01 = "";
+    string active02 = "";
+    string active03 = "";
+    string active04 = "";
+    string active05 = "";
+    string active06 = "";
+    string active07 = "";
+    //string active08 = "";
+    string active09 = "";
+    //string active10 = "";
+    string active11 = "";
+    string active12 = "";
+    string active13 = "";
+    //string active14 = "";
+
+    // Change Link Share card information based on the View link shared
+    switch (ViewBag.Message)
+    {
+        case "About":
+            {               
+                pageTitle = siteNameShort;
+                folder = "";                              
+                active01 = "active";
+                break;
+            }
+        case "Home":
+            {
+                pageTitle = siteNameShort;
+                folder = "";
+                active01 = "active";
+                break;
+            }
+        case "Contact":
+            {
+                pageTitle = ViewBag.Message + " - " + siteNameShort;
+                folder = "Info/Contact";
+                description = "Contact Us";               
+                active02 = "active";
+                break;
+            }
+        case "Calendar":
+            {
+                pageTitle = ViewBag.Message + " - " + siteNameShort;
+                folder = "Info/Calendar";
+                description = "Our Calendar";             
+                active03 = "active";
+                break;
+            }        
+        case "Gallery":
+            {
+                pageTitle = ViewBag.Message + " - " + siteNameShort;
+                folder = "Gallery/Gallery";
+                description = "Our Gallery";               
+                active04 = "active";
+                break;
+            }
+        case "Privacy":
+            {
+                pageTitle = ViewBag.Message + " - " + siteNameShort;
+                folder = "Info/Privacy";
+                description = "Privacy Policy";
+                active05 = "active";
+                break;
+            }
+        case "TOS":
+            {
+                pageTitle = ViewBag.Message + " - " + siteNameShort;
+                folder = "Info/TOS";
+                description = "Terms of Service";
+                active06 = "active";
+                break;
+            }       
+        case "Store":
+            {
+                pageTitle = ViewBag.Message + " - " + siteNameShort;
+                folder = "Merchandise/Store";
+                description = "Merchandise Stores";            
+                active09 = "active";
+                break;
+            }
+        
+    }
+
+    // Page Share Settings -- (shows on "PageShare" card when a link is shared)
+    string ogSite_Name = siteOrganization;
+    string ogTitle = pageTitle;
+    string ogDescription = description;
+    string ogURL = siteURL + folder;
+    string ogImage = shareImageFolder + shareImage;
+    string ogImageWidth = imageWidth;
+    string ogImageHeight = imageHeight;
+    string canonical = ogURL;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Site Name -->
+    <title>@pageTitle</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="@ogDescription" />
+    <link rel="canonical" href="@canonical" />
+
+    <!-- FavIcon(s) - (all your Logo... plenty of them!) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="~/content/icons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" type="image/pgn" href="~/content/icons/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="~/content/icons/android-chrome-512x512.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="~/content/icons/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="~/content/icons/favicon-32x32.png" />
+    <link rel="icon" type="image/x-icon" href="~/favicon.ico" />
+
+    <!-- Fonts (Lato - add more fonts here) -->
+    <link href='https://fonts.googleapis.com/css?family=Lato:300, 400, 500, 600' rel='stylesheet' type='text/css'>
+
+    <!-- Default FB App ID unused -->
+    <meta property="fb:app_id" content="966242223397117" />
+
+    <!-- Link Share Setup -->
+    <!-- This info is used for the card shown when you share a link on the web (I call it "Link Share"). -->
+    <!-- (more info here: https://ogp.me/) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="@ogTitle" />
+    <meta property="og:determiner" content="The" />
+    <meta property="og:description" content="@ogDescription" />
+    <meta property="og:site_name" content="@ogSite_Name" />
+    <meta property="og:url" content="@ogURL" />
+    <meta property="og:image:url" content="@ogImage" />
+    <meta property="og:image:alt" content="Logo Image" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content=@ogImageWidth />
+    <meta property="og:image:height" content=@ogImageHeight />
+
+    <!-- Twitter Link Share Setup -->
+    <!-- (more info here: https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup) -->
+    <meta name="twitter:card" content="photo" />
+    <meta name="twitter:title" content="@ogTitle" />
+    <meta name="twitter:image" content="@ogImage" />
+    <meta name="twitter:image:width" content=@ogImageWidth />
+    <meta name="twitter:image:height" content=@ogImageHeight /> 
+
+    <!-- CSS Link Setup -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/colors.css?v01" />
+    <link rel="stylesheet" href="~/css/fontsize.css?v01" />
+    <link rel="stylesheet" href="~/css/mycards.css?v01" />
+    <link rel="stylesheet" href="~/css/site.css?v01" />
+    <link rel="stylesheet" href="~/css/sizes.css?v01" />
+    <link rel="stylesheet" href="~/css/spacing.css?v01" />
+
+    <!-- JS Link Setup -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js"></script>
+
+</head>
+<body>
+
+    <!-- Top Header Navbar Menu -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom box-shadow px-0 mb-0 mb-lg-4 my-0">
+            <div class="d-flex flex-grow-1">
+
+                <!-- Set to show on lg -->
+                <a class="navbar-brand navbar-text text-white d-none d-lg-inline-block ps-3" href="~/Info/About">@siteName</a>
+
+                <!-- Set to show on sm -->
+                <a class="navbar-brand navbar-text text-white d-lg-none d-inline-block w-100 text-center me-0 ps-5" href="~/Info/About">@siteNameShort</a>
+
+                <!-- Toggle Button -->
+                <div class="text-left pe-2 pt-1">
+                    <button class="navbar-toggler pe-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Selection Choices -->
+            <div class="collapse navbar-collapse flex-grow-1 text-right px-2" id="navbarToggler">
+
+                <ul class=" ps-4 navbar-nav ms-auto flex-nowrap">
+
+                    <!-- Bio -->                    
+                    <li class="nav-item">
+                        <a class="@active01 nav-link nav-link-fs" href="/"><img class="show-on-phone home-size px-2 pb-2" src="~/content/svg/buttons/home.svg" />Bio</a>
+                    </li>
+
+                    <!-- Contact -->
+                   @* <li class="nav-item">
+                        <a class="@active02 nav-link nav-link-fs" href="~/Info/Contact"><img class="show-on-phone home-size px-2 pb-2" src="~/content/svg/Cards/Email-White.svg" />Contact</a>
+                    </li>*@
+
+                    <!-- Schedule -->
+                    <li class="nav-item">
+                        <a class="@active03 nav-link nav-link-fs" href="~/Info/Calendar"><img class="show-on-phone home-size px-2 pb-2" src="~/content/svg/cards/Calendar-White.svg" />Schedule</a>
+                    </li>                     
+
+                    <!-- Gallery -->
+                   @* <li class="nav-item">
+                        <a class="@active04 nav-link nav-link-fs" href="~/Gallery/Gallery"><img class="show-on-phone home-size px-2 pb-2" src="~/content/svg/cards/pictures-white.svg" />Gallery</a>
+                    </li>*@
+
+                </ul>
+
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content (Views) -->
+    <div id="MainContainer" class="container p-0">
+        <main role="main" class="p-0">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- Bottom Footer Navbar Menu -->
+    <footer class="navbar navbar-dark border-top bg-black" role="contentinfo" aria-label="Site footer">
+
+        <div class="container text-right">
+
+            <!-- Bottom Footer Row -->
+            <div class="row w-100 gx-0 gx-lg-5">
+
+                <!-- Bottom Footer Column - Info -->
+                <div class="col-4">
+                    <h6 class="navbar-text text-white mb-0">Info</h6>
+                    <ul class="navbar-nav ms-auto flex-nowrap ps-2">
+                        <li class="nav-item text-light">
+                            <a class="@active01 nav-link text-nowrap" href="/">Bio</a>
+                        </li>
+                        @*<li class="nav-item text-light">
+                            <a class="@active02 nav-link text-nowrap" href="~/Info/Contact">Contact Drew</a>
+                        </li>*@                        
+                    </ul>
+                </div>
+
+                <!-- Bottom Footer Column - Features -->
+                <div class="col-4">
+                    <h6 class="navbar-text text-white mb-0">Features</h6>
+                    <ul class="navbar-nav ms-auto flex-nowrap ps-2">
+                        <li class="nav-item text-light">
+                            <a class="@active03 nav-link" style="font-size: 12px;" href="~/Info/Calendar" target="_blank">Schedule</a>
+                        </li>                       
+                       @* <li class="nav-item text-light">
+                            <a class="@active09 nav-link" style="font-size: 12px;" href="~/Merchandise/Store">Merchandise</a>
+                        </li>
+                        <li class="nav-item text-light">
+                            <a class="@active04 nav-link" style="font-size: 12px;" href="~/Gallery/Gallery">Gallery</a>
+                        </li>*@
+                    </ul>
+                </div>
+
+                <!-- Bottom Footer Column - More -->
+                <div class="col-4 pe-0">
+                    <h6 class="navbar-text text-white mb-0">More</h6>
+                    <ul class="navbar-nav ms-auto flex-nowrap ps-2">
+                        <li class="nav-item text-light">
+                            <a class="@active05 nav-link" style="font-size: 12px;" href="~/Info/Privacy">Privacy Policy</a>
+                        </li>
+                        <li class="nav-item text-light">
+                            <a class="@active06 nav-link" style="font-size: 12px;" href="~/Info/TOS">Terms of Service</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="w-100 bg-gray text-white">
+            <h6 class="text-center py-2" style="font-size: 10px;">Copyright © @DateTime.Now.Year All Rights Reserved.</h6>
+        </div>
+
+    </footer>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

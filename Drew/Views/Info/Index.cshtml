@@ -1,0 +1,124 @@
+﻿@{
+    /* For Carousel Display */
+    string extension = ".jpg";
+    string folder = "About/";
+    string folderURL = "../content/gallery/" + folder;
+    int count = Directory.GetFiles("wwwroot/content/gallery/" + folder, "*" + extension).Length;
+}
+
+<!-- Content Container - About -->
+<div Class="px-lg-4">
+
+    <!-- Content Row - Heading -->
+    <div class="row gx-0 gx-lg-3 align-content-end">
+
+        <!-- Column - Logo and Description -->
+        <div class="col-lg-5 pb-lg-3">
+
+            <!-- Banner-Logo -->
+            <div class="my-card-plain mx-sm-1 mx-md-0 pt-2 pt-md-4 pt-lg-0">
+                <div class="bd-logo-size ratio auto-margin p-0">
+                    <img style="padding-left:12px; padding-right:12px;" src="/content/pageimages/drewandchris.png" />                   
+                </div>
+            </div>
+
+            <!-- Site Description -->
+            <div class="my-card-radius text-white mx-sm-1 mx-md-0 my-md-2 my-lg-0 px-2 px-lg-0 pt-2 pb-1 border-dark bg-black">
+                <div class="px-0 pt-2 pb-1">
+                    <p class="card-text text-white m-0 px-2 pb-3 who-are-we-fs">
+                        Drew Sheafor is a talented musician based in St. Louis, Missouri, known for his energetic and engaging performances at local clubs and special events. With his powerful voice and extensive repertoire, Drew has earned the nickname "the human jukebox," able to play a diverse range of music spanning many decades and genres.
+                    </p>
+                    <p class="card-text text-white m-0 px-2 pb-3 who-are-we-fs">
+                        Often accompanied by bass player Chris Powers, Drew's dynamic stage presence and ability to connect with his audience have made him a popular performer in the St. Louis music scene. Whether he's playing classic rock, blues, country, or pop hits, Drew's passion for music is contagious, and he always brings a high level of energy to his performances.
+                    </p>
+                    <p class="card-text text-white m-0 px-2 pb-3 who-are-we-fs">
+                        With years of experience playing in different bands and venues, Drew has become a master at reading the crowd and tailoring his setlist to keep everyone entertained. He is a true live performer who thrives on playing in front of crowds and interacting with his audience.
+                    </p>
+                    <p class="card-text text-white m-0 px-2 pb-3 who-are-we-fs">
+                        When he's not performing live, Drew can often be found collaborating with other musicians or working on new material to bring to his performances. With his dedication to entertaining his fans and his commitment to his craft, Drew Sheafor is a rising star in the St. Louis music community, and one to watch in the years to come.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel for Picture slides -->
+        <div class="col-lg-7 pb-lg-3 px-0 px-lg-5">
+            <div class="mx-sm-1 mx-md-0 carousel slide pb-0 pointer-event my-rounded" id="CarouselControl" data-bs-ride="carousel">
+
+                <!-- The slideshow -->
+                <div class="my-rounded carousel-inner shadow" id="CarouselItems"></div>
+
+                <!-- Left And right controls -->
+                <a class="carousel-control-prev" href="#CarouselControl" role="button" data-bs-slide="prev"></a>
+                <a class="carousel-control-next" href="#CarouselControl" role="button" data-bs-slide="next"></a>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Row - Cards-1 -->
+   @* <div class="row gx-0 gx-sm-2 gx-md-3 gx-lg-3 align-content-end">
+
+        <!-- Column - Calendar Card -->
+        <div class="col-12 col-md-6 col-lg-4 px-2 pt-2 pt-lg-0 mb-lg-3 lh-sm">
+
+            <!-- Card -->
+            <div class="my-card border-0 home-card-header-color">
+
+                <!-- Header -->
+                <div class="w-100 py-2 px-3">
+                    <h3 class="pb-1">
+                        <img class="card-image-size image-light-show" src="/Content/Svg/Cards/Calendar-White.svg">
+                        <img class="card-image-size image-dark-show" src="/Content/Svg/Cards/Calendar-Black.svg">
+                        Our Calendar
+                    </h3>
+                    <p class="fw-normal mb-0">Calendar of Events</p>
+                </div>
+
+                <!-- Footer -->
+                <div class="my-card-footer home-card-footer-color w-100">
+                    <p class="card-text card-body-text-fs p-3 py-2 mb-0">The events calendar can be hectic and on the change, so click here to keep in sync.</p>
+
+                    <!-- Link -->
+                    <div class="text-center pt-0 pb-2">
+                        <a class="btn btn-sm btn-primary text-nowrap" href="../Info/Calendar" target="_self">Calendar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Column - Merchandise -->
+        <div class="col-12 col-md-12 col-lg-4 px-2 pt-2 pt-lg-0 mb-lg-3 lh-sm">
+
+            <!-- Card -->
+            <div class="my-card border-0 home-card-header-color">
+
+                <!-- Header -->
+                <div class="w-100 py-2 px-3">
+                    <h3 class="pb-1">
+                        <img class="card-image-size image-light-show" src="/Content/Svg/Cards/Merchandise-White.svg">
+                        <img class="card-image-size image-dark-show" src="/Content/Svg/Cards/Merchandise-Black.svg">
+                        Merch...
+                    </h3>
+                    <p class="fw-normal mb-0">Get your Swag here!</p>
+                </div>
+
+                <!-- Footer -->
+                <div class="my-card-footer home-card-footer-color w-100">
+                    <p class="card-text card-body-text-fs p-3 py-2 mb-0">Links to our gear.</p>
+
+                    <!-- Link -->
+                    <div class="text-center pt-0 pb-2">
+                        <a class="btn btn-sm btn-primary text-nowrap" href="~/Merchandise/Store">Merchandise</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   *@
+</div>
+
+<div class="about-view-bottom-spacing"></div>
+
+<script>
+    createCarouselList("@folderURL", @count);
+</script>
