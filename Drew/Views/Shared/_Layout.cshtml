@@ -29,32 +29,25 @@
     string active04 = "";
     string active05 = "";
     string active06 = "";
-    string active07 = "";
+    //string active07 = "";
     //string active08 = "";
-    string active09 = "";
+    //string active09 = "";
     //string active10 = "";
-    string active11 = "";
-    string active12 = "";
-    string active13 = "";
+    //string active11 = "";
+    //string active12 = "";
+    //string active13 = "";
     //string active14 = "";
 
     // Change Link Share card information based on the View link shared
     switch (ViewBag.Message)
     {
-        case "About":
+        case "Bio":
             {               
                 pageTitle = siteNameShort;
                 folder = "";                              
                 active01 = "active";
                 break;
-            }
-        case "Home":
-            {
-                pageTitle = siteNameShort;
-                folder = "";
-                active01 = "active";
-                break;
-            }
+            }        
         case "Contact":
             {
                 pageTitle = ViewBag.Message + " - " + siteNameShort;
@@ -95,14 +88,6 @@
                 active06 = "active";
                 break;
             }       
-        case "Store":
-            {
-                pageTitle = ViewBag.Message + " - " + siteNameShort;
-                folder = "Merchandise/Store";
-                description = "Merchandise Stores";            
-                active09 = "active";
-                break;
-            }
         
     }
 
@@ -193,10 +178,10 @@
             <div class="d-flex flex-grow-1">
 
                 <!-- Set to show on lg -->
-                <a class="navbar-brand navbar-text text-white d-none d-lg-inline-block ps-3" href="~/Info/About">@siteName</a>
+                <a class="navbar-brand navbar-text text-white d-none d-lg-inline-block ps-3" href="/"><img class="home-size px-2 pb-2" src="~/content/svg/buttons/home.svg" />@siteName</a>
 
                 <!-- Set to show on sm -->
-                <a class="navbar-brand navbar-text text-white d-lg-none d-inline-block w-100 text-center me-0 ps-5" href="~/Info/About">@siteNameShort</a>
+                <a class="navbar-brand navbar-text text-white d-lg-none d-inline-block w-100 text-center me-0 ps-5" href="/"><img class="show-on-phone home-size px-2 pb-2" src="~/content/svg/buttons/home.svg" />@siteNameShort</a>
 
                 <!-- Toggle Button -->
                 <div class="text-left pe-2 pt-1">

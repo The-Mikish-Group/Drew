@@ -2,23 +2,17 @@ using Microsoft.AspNetCore.Mvc;
 using Drew.Models;
 using System.Diagnostics;
 
-namespace SIBulldogs.Controllers;
+namespace Drew.Controllers;
 
 public class InfoController : Controller   {
 
-    // Redirect Index to About
+    // Our Views
     public IActionResult Index()
     {
-        ViewBag.Message = "About";
+        ViewBag.Message = "Bio";
         return View();
     }
-
-    // Our Views
-    public IActionResult About()
-    {
-        ViewBag.Message = "About";            
-        return View("Index");
-    }
+    
     public IActionResult Contact()
     {
         ViewBag.Message = "Contact";                       
@@ -39,45 +33,9 @@ public class InfoController : Controller   {
         ViewBag.Message = "Calendar";            
         return View();
     }
-     public IActionResult Fundraise()
-    {
-        ViewBag.Message = "Fundraise";
-        return View();
-    }
-    public IActionResult Bilaws()
-    {
-        ViewBag.Message = "Bilaws";
-        return View();
-    }
-    public IActionResult ClubInfo()
-    {
-        ViewBag.Message = "ClubInfo";
-        return View();
-    }
-     public IActionResult Minutes()
-    {
-        ViewBag.Message = "Minutes";
-        return View();
-    }
-     public IActionResult Flyer()
+    public IActionResult Flyer()
     {
         ViewBag.Message = "Flyer";
-        return View();
-    }
-    public IActionResult TrackWrestling()
-    {
-        ViewBag.Message = "TrackWrestling";
-        return View();
-    }
-    //public IActionResult ClubBanner()
-    //{
-    //    ViewBag.Message = "ClubBanner";
-    //    return View();
-    //}
-
-    public IActionResult Test()
-    {
-        ViewBag.Message = "Test";
         return View();
     }
 

@@ -2,7 +2,7 @@
 using Drew.Models;
 using System.Diagnostics;
 
-namespace SIBulldogs.Controllers;
+namespace Drew.Controllers;
 
 public class MerchandiseController : Controller
 {
